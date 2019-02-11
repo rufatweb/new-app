@@ -1,3 +1,3 @@
 class UserItemSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :item_id
+  attributes :id, :user_id, :item, :quantity
 end
