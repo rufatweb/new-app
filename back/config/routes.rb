@@ -20,6 +20,12 @@ Rails.application.routes.draw do
       patch 'user_items/:id', to: 'user_items#update'
       post '/user_items', to: 'user_items#create'
       delete 'user_items/:id', to: 'user_items#destroy'
+      resources :orders
+      resources :order_items
+      post '/orders', to: 'orders#create'
+      post '/order_items', to: 'order_items#create'
+      resources :charges, only: [:new, :create]
+      post '/charges', to: 'charges#create'
     end
   end
 end
